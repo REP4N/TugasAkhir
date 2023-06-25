@@ -18,17 +18,26 @@
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Admin</b></a>
+      <a href="{{route('simpan-register') }}" class="h1"><b>Admin</b></a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Halaman Register</p>
 
-      <form action="../../index.html" method="post">
+      <form action=" {{ route('simpan-register') }}" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Full name">
+
+          @if (count($errors) > 0)
+                 <div style="width: auto; color:brown; margin-top: 0,25rem;">
+                  {{ $errors->first('full name')}}
+                 </div>
+                  
+              @endif
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
+
+              
             </div>
           </div>
         </div>

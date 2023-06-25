@@ -11,4 +11,13 @@ class penggunaController extends Controller
     {
         return view('Pengguna.register');
     }
+
+    public function simpanRegister(Request $request)
+    {
+        $this->validate($request, [
+            'full name' => 'required|string',
+            'email'     => 'required|email|string',
+            'password'  => 'required|string',
+        ]);
+    }
 }

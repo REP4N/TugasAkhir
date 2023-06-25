@@ -20,3 +20,4 @@ Route::get('', function () {
 
 
 Route::get('register', [PenggunaController::class, 'index'])->name('register'); 
+Route::post('simpan-register', [PenggunaController::class, 'simpanRegister'])->name('simpan-register');
