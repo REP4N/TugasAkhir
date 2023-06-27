@@ -21,3 +21,9 @@ Route::get('', function () {
 
 Route::get('register', [PenggunaController::class, 'index'])->name('register'); 
 Route::post('simpan-register', [PenggunaController::class, 'simpanRegister'])->name('simpan-register');
+
+
+
+    // User Management
+    Route::resource('/users', UserController::class)->except(['show']);
+    Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
