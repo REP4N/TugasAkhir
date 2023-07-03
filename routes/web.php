@@ -90,3 +90,4 @@ Route::middleware('auth')->group(function () {
     Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 });
 
+require __DIR__.'/auth.php';
