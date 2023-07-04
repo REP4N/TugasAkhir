@@ -38,8 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
-
     Route::resource('/customers', CustomerController::class);
     Route::resource('/suppliers', SupplierController::class);
     Route::resource('/categories', CategoryController::class);
@@ -92,4 +90,4 @@ Route::middleware('auth')->group(function () {
     Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 });
 
-//require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
